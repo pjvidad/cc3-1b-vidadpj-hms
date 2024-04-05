@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,9 +34,8 @@ namespace HotelManagementSystem
         {
             users.Add(user);
         }
-        private static int s_ReservationIDseed = 0123456;
 
-        public void DisplayReservationDetails()
+        public void DisplayReservationDetails(int reservationId)
         {
             foreach (var user in users)
             {
@@ -44,7 +43,11 @@ namespace HotelManagementSystem
                 {
                     foreach (var reservation in guest.Reservations)
                     {
-                        int ReservationID = s_ReservationIDseed++;
+                        if(reservation.StartTime.GetHashCode() == reservationId)
+                        {
+                           Console.WriteLine(reservation);
+                           return;
+                        }
                     }
                 }
             }
