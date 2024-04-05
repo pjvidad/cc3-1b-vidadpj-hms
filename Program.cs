@@ -1,4 +1,4 @@
-﻿namespace HotelManagementSystem
+namespace HotelManagementSystem
 {
     internal class Program
     {
@@ -23,7 +23,7 @@
             pj.BookReservation(hotelYanan, room1, DateTime.Now, new DateTime(2024, 04, 16));
             hotelYanan.DisplayBookedRooms();
 
-            hms.DisplayReservationDetails();
+            hms.DisplayReservationDetails(1234567890) ;
             pj.DisplayReservations();
         }
     }
